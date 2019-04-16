@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: prod
+
+#部署运行环境修改参数就可以在开发环境dev和生产环境prod之间切换
+#命令为：java -jar -Dspring.profiles.active=dev 或者prod target/"jar包所在目录路径"

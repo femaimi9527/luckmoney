@@ -1,0 +1,18 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /luckmoney
+
+#单个属性配置
+#minMoney: 1
+#description: "最少要发1元"
+
+#在配置中使用配置
+#minMoney: 1
+#description: "最少要发${minMoney}元"
+
+#limit这个对象里面有三个字段
+limit:
+  minMoney: 0.01
+  maxMoney: 9999
+  description: 最少要发${limit.minMoney}元, 最多${limit.maxMoney}元
