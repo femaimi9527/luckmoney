@@ -8,6 +8,13 @@ import java.math.BigDecimal;
 /**
  * @author: xxm
  * @date: Create in 16:02 2019/4/17
+ *
+ * 启动后对应的数据库操作如下：
+ * Hibernate: drop table if exists hibernate_sequence
+ * Hibernate: drop table if exists luckmoney
+ * Hibernate: create table hibernate_sequence (next_val bigint) engine=MyISAM
+ * Hibernate: insert into hibernate_sequence values ( 1 )
+ * Hibernate: create table luckmoney (id integer not null, consumer varchar(255), money decimal(19,2), producer varchar(255), primary key (id)) engine=MyISAM
  */
 @Entity
 public class Luckmoney {

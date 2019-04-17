@@ -19,8 +19,6 @@ limit:
 
 
 #  “com.mysql.cj.jdbc.Driver”是新版驱动
-# url那里，加了“?characterEncoding=utf-8&serverTimezone=GMT%2B8”在后面就能成功启动项目，为什么要设置编码和时区？
-# url: jdbc:mysql://127.0.0.1:3306/luckmoney ---这是原来的url ，启动项目失败，貌似主要提示Time out
 spring:
 
   datasource:
@@ -33,6 +31,20 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+
+
+
+# url那里，加了“?characterEncoding=utf-8&serverTimezone=GMT%2B8”在后面就能成功启动项目，为什么要设置编码和时区？
+# url: jdbc:mysql://127.0.0.1:3306/luckmoney ---这是原来的url ，启动项目失败，貌似主要提示Time out
+#添加的作用是：指定字符的编码、解码格式。
+#例如：mysql数据库用的是gbk编码，而项目数据库用的是utf-8编码。这时候如果添加了useUnicode=true&characterEncoding=UTF-8 ，那么作用有如下两个方面：
+#存数据时：
+#数据库在存放项目数据的时候会先用UTF-8格式将数据解码成字节码，然后再将解码后的字节码重新使用GBK编码存放到数据库中。
+#取数据时：
+#在从数据库中取数据的时候，数据库会先将数据库中的数据按GBK格式解码成字节码，然后再将解码后的字节码重新按UTF-8格式编码数据，最后再将数据返回给客户端。
+#---------------------
+#作者：qq_37745470
+#原文：https://blog.csdn.net/qq_37745470/article/details/86574493
 
 
 
