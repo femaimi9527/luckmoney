@@ -16,3 +16,23 @@ limit:
   minMoney: 0.01
   maxMoney: 9999
   description: 最少要发${limit.minMoney}元, 最多${limit.maxMoney}元
+
+
+#  “com.mysql.cj.jdbc.Driver”是新版驱动
+# url那里，加了“?characterEncoding=utf-8&serverTimezone=GMT%2B8”在后面就能成功启动项目，为什么要设置编码和时区？
+# url: jdbc:mysql://127.0.0.1:3306/luckmoney ---这是原来的url ，启动项目失败，貌似主要提示Time out
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/luckmoney?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 888888
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+
+

@@ -30,23 +30,41 @@ public class HelloController {
     @Autowired
     private LimitConfiguration limitConfiguration;
 
-    //新版写法
+    //新版写法：@GetMapping
+
+    /**实现形参列表中定义数组形式的访问地址切换，后缀“hello”和“hi”皆可以访问*/
 //    @GetMapping({"/hello","/hi"})
+    /***/
 //    @GetMapping("/hello/say")
+    /***/
 //    @GetMapping("/say")
+    /***/
 //    @PostMapping("/say")
-    @RequestMapping("/say")
+    /***/
+      @RequestMapping("/say")
+    /***/
 //    @GetMapping("/say/{id}")
-    @ResponseBody
+    /***/
+      @ResponseBody
+    /***/
 //    public String say(@PathVariable("id") Integer id){
+    /***/
 //    public String say(@RequestParam("id") Integer myId){
+    /***/
     public String say(@RequestParam(value = "id",required = false,defaultValue = "0") Integer myId){
+
         //第一种写法：
+          /**返回String类型语句*/
 //        return "新版Springboot来袭！！";
+          /***/
 //        return "minMoney:"+minMoney+"说明:"+description;
+          /***/
 //        return "说明："+limitConfiguration.getDescription();
+          /***/
 //        return "index";
+          /***/
 //        return "id:"+ id;
-        return "myId:"+ myId;
+          /***/
+          return "myId:"+ myId;
     }
 }
