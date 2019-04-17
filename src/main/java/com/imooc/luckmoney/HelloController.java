@@ -16,6 +16,7 @@ import java.math.BigDecimal;
  */
 //@RestController
     @Controller
+//@RequestMapping 可以放在@Controller 后面，也可以放在@GetMapping 后面
 //    @ResponseBody
     @RequestMapping("/hello")
 public class HelloController {
@@ -40,6 +41,7 @@ public class HelloController {
 //    public String say(@PathVariable("id") Integer id){
 //    public String say(@RequestParam("id") Integer myId){
     public String say(@RequestParam(value = "id",required = false,defaultValue = "0") Integer myId){
+        //第一种写法：
 //        return "新版Springboot来袭！！";
 //        return "minMoney:"+minMoney+"说明:"+description;
 //        return "说明："+limitConfiguration.getDescription();
