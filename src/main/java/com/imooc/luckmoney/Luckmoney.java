@@ -70,3 +70,9 @@ public class Luckmoney {
         this.consumer = consumer;
     }
 }
+
+/**
+ * 1.set和get用于private变量的封装，一般只用在封装里，当然它也可以用2所说的。
+ * 2.get和set起源于它的中文翻译，获取和设置。主要是便于理解。比如获取XX值和设置XX值。这样不仅方便自己看，别人也很容易理解的。所以也不仅仅用于封装的。
+ * 3.javabean就是一个简单的java类，里面只有变量和set/get方法之类的，不需要安装jar包及组件。
+ */
